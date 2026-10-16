@@ -1,0 +1,18 @@
+# Rust
+/target/
+**/*.rs.bk
+*.pdb
+
+# QPDF builds (~10 MB each, unpacked) for development and tests: neither in
+# the repository nor in the release, which ships without QPDF
+/bin/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Local editor settings
+.vscode/
+
+# Release packages, built locally before publishing
+/dist/

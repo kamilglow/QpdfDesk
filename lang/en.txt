@@ -1,0 +1,488 @@
+# QpdfDesk — English, the reference catalog: every text the program shows.
+#
+# key = text
+#   {name}   a value the program fills in; keep every one, in any order.
+#   \n       a line break.
+#   key.one / key.few / key.many — the forms of a count: one (1), few (2–4,
+#            22–24… — Polish), many (the rest). English has no `few`.
+#
+# A translation is lang/<code>.txt with the same keys; a key it leaves out
+# shows in English. Never use @ (FLTK draws a symbol) nor & (a button's
+# keyboard shortcut; only step.* may); in item.* (drop-down and menu entries)
+# never | / or _. The build checks all of this.
+
+# ---- Steps ----
+step.pages = Pages
+step.overlay = Stamp / background
+step.forms = Forms & annotations
+step.attachments = Attachments
+step.privacy = Privacy
+step.optimize = Optimization
+step.protect = Protection
+step.output = Output
+
+# ---- Result names: the ending in "name (ending).pdf" ----
+tag.merged = merged
+tag.mixed = mixed
+tag.repaired = repaired
+tag.pages = pages
+tag.underlaid = underlaid
+tag.overlaid = overlaid
+tag.form_removed = form removed
+tag.flattened = flattened
+tag.attachments = attachments
+tag.cleaned = cleaned
+tag.optimized = optimized
+tag.protected = protected
+tag.unlocked = unlocked
+tag.split = split
+tag.linearized = linearized
+tag.processed = processed
+# The folder attachments are pulled out into: "name (attachments)".
+tag.attachments_folder = attachments
+
+# ---- What became of a file ----
+verdict.done = Done
+verdict.warnings = Done with warnings
+verdict.not_smaller = Not smaller (kept original)
+verdict.password = Password required
+verdict.cancelled = Cancelled
+verdict.failed = Failed: {why}
+
+failure.not_pdf = Not a PDF file
+failure.damaged = The file is damaged beyond repair
+failure.in_use = File is in use by another program
+failure.access_denied = Access denied (the file may be open in another program)
+failure.not_found = File not found
+failure.path_too_long = Path too long for QPDF
+failure.memory_limit = File too complex (memory limit)
+failure.hung = QPDF stopped responding
+failure.crashed = QPDF crashed
+failure.no_disk_space = Not enough disk space
+failure.folder_not_writable = Cannot write in the result's folder (no permission)
+failure.folder_missing = The result's folder is not there
+failure.verification = The result did not pass verification
+failure.fixed_id_encrypted = Privacy: a fixed document ID cannot be made for an encrypted file (add Protection › Unlock)
+failure.attachment_exists = Attachments: the file already has one with that name (Remove all replaces it)
+failure.not_merged = Not merged: another file cannot be used
+failure.qpdf_silent = QPDF failed without a message
+failure.path_characters = The path contains characters QPDF cannot be given
+failure.path_not_full = The path is not a full path
+failure.empty_value = An empty value cannot be given to QPDF
+failure.qpdf_not_started = QPDF could not be started: {why}
+failure.too_many_processes = Too many QPDF processes at once
+failure.no_output_name = No output file name
+failure.no_file = No file
+failure.no_file_name = No file name
+failure.no_folder = No folder
+failure.attachment_key = Its key in the PDF cannot be given to QPDF
+failure.attachments_unlisted = Its attachments could not be listed
+failure.no_page_count = QPDF did not report a page count
+failure.report_too_large = QPDF's report on the file is too large
+failure.report_unreadable = QPDF's report on the file could not be read
+verification.pages = Pages: expected {expected}, found {found}
+verification.unknown = unknown
+
+# ---- Check ----
+check.ok = OK
+check.warnings = Warnings
+check.password = Password
+check.cancelled = Cancelled
+check.not_pdf = Not a PDF
+check.damaged = Damaged
+check.unreadable = Unreadable
+check.failed = Failed
+check.health = {kind}: {why}
+check.omitted = ({count} more lines from QPDF not kept)
+report.files.one = {count} file: {tally}
+report.files.many = {count} files: {tally}
+
+# ---- Page ranges ----
+range.empty = enter the pages, e.g. 1-5,8,z
+range.syntax = “{part}” is not a page range (e.g. 1-5,8,z  r1  1-z:odd)
+range.no_such_page = page {page} does not exist (the file has {pages})
+range.no_such_page_in_result = page {page} does not exist (the result has {pages})
+range.none_in_result = none of them is in the result
+range.no_pages = no pages would be left
+range.not_deletable = pages to delete cannot use x, :odd or :even
+
+# ---- Why the job cannot run: "<step>: <why>" ----
+job.error = {step}: {why}
+job.field_error = {field}: {why}
+job.input_password = Password for encrypted inputs
+field.pages_rotate = pages to rotate
+field.pages_cover = pages to cover
+field.name = name
+job.choose_pages = choose pages to keep, delete, reverse, merge or rotate
+job.overlay_unusable = the file cannot be used: {why}
+job.overlay_password = the file needs the password for encrypted inputs
+job.overlay_checking = checking the file…
+job.overlay_no_pages = the file has no pages
+job.overlay_choose = choose the PDF to put on your pages
+job.attach_choose = choose files to attach, or Remove all
+job.attach_same_name = two files are named “{name}”
+job.privacy_choose = choose what to remove
+job.privacy_fixed_id = a fixed document ID cannot be used with encryption
+job.owner_required = the owner password is required
+job.owner_differs = the owner password must differ from the open password
+job.jpeg_quality = JPEG quality goes from 0 to 100
+job.split_pages = split into parts of 1 page or more
+job.output_folder = choose the folder
+job.output_folder_full = the folder must be a full path, e.g. D:\Results
+password.line_break = a password cannot contain a line break
+password.input_line_break = it cannot contain a line break
+password.repeat_open = repeat the open password
+password.repeat_owner = repeat the owner password
+password.differ_open = the two open passwords differ
+password.differ_owner = the two owner passwords differ
+
+# ---- A name typed for a result or a profile ----
+name.characters = it cannot hold \ / : * ? " < > | or control characters
+name.blank = it cannot be empty, nor start with a space or end with a dot or a space
+name.device = Windows keeps that name for a device
+name.too_long = at most 100 characters
+item.profile.default = Default
+profile.name_empty = type a name
+profile.name_too_long = at most 40 characters
+profile.name_characters = only letters, digits, spaces and - . , ( ) + # '
+profile.name_default = “{name}” is the panel as it starts
+
+# ---- What the Info window tells about encryption ----
+encryption.rc4 = RC4 {bits}-bit (weak)
+encryption.binary = (binary)
+forbidden.printing = printing
+forbidden.printing_high = printing in high quality
+forbidden.copying = copying
+forbidden.editing = editing
+forbidden.annotating = annotating
+forbidden.forms = filling forms
+forbidden.assembling = assembling
+forbidden.accessibility = accessibility tools
+
+# ---- Sizes ----
+size.bytes = {count} B
+# The decimal point of 1.5 MB.
+number.decimal_point = .
+
+# ---- Drop-down items (never | / _) ----
+item.pages.all = All pages
+item.pages.keep = Keep only these pages
+item.pages.delete = Delete these pages
+item.pages.reverse = Reverse page order
+item.files.each = Each file on its own
+item.files.merge = Merge all files into one
+item.files.mix = Mix files page by page (A1, B1, A2, B2…)
+item.overlay.on_top = On top (stamp, watermark)
+item.overlay.under = Under (background, letterhead)
+item.placement.page_one = Its page 1 on each page
+item.placement.in_order = Its pages in order: 1 on 1, 2 on 2…
+item.placement.in_turn = Its pages in turn: 1, 2, 1, 2…
+item.angle.right = 90° clockwise
+item.angle.upside_down = 180°
+item.angle.left = 90° counterclockwise
+item.forms.flatten_all = Flatten fields and annotations
+item.forms.flatten_print = Flatten printable annotations only
+item.forms.flatten_screen = Flatten on-screen annotations only
+item.forms.remove_form = Remove the form, keep the fields' look
+item.optimize.lossless = Lossless (images untouched)
+item.optimize.smaller = Smaller: images to JPEG
+item.optimize.quality = Smaller: JPEGs re-encoded too
+item.streams.generate = Generate (smaller)
+item.streams.preserve = Preserve
+item.streams.disable = Disable (old readers)
+item.place.original = Next to the original
+item.place.folder = In this folder:
+item.protect.lock = Lock with a password (AES-256)
+item.protect.unlock = Unlock (no password, no restrictions)
+item.print.full = Full
+item.print.low = Low quality
+item.print.none = None
+
+# ---- The steps panel ----
+profile.tooltip = Profiles: saved sets of steps and options (never passwords)\n* = changed since the profile was loaded\nThe panel comes back as you left it
+pages.example = Example: 1-5,8   z = last page
+pages.files = Files
+pages.arrange = Arrange pages…
+pages.arrange_tip = Remove and reorder the pages of the selected file.\nThey replace the pages chosen above, for that file only.
+pages.own_hint = A file's own pages (Arrange pages…) replace the pages chosen above.
+pages.rotate = Rotate
+pages.rotate_hint = page numbers of the result
+pages.bookmarks_hint = Merged and mixed files keep no bookmarks (the outline).
+range.syntax_tip = 1-5,8 = pages 1 to 5 and page 8\nz = the last page, r2 = the one before it\n1-z:odd = the odd pages, 1-z:even = the even pages\n1-z,x3 = every page except 3
+own_pages.set = Own pages of {who}: {pages}
+overlay.hint = Puts the pages of another PDF on your pages.
+overlay.file = PDF file
+overlay.use = Use
+overlay.on_pages = On pages
+overlay.on_pages_hint = 1 = only the first, 2-z = all but the first
+overlay.to_tip = Your pages that get the PDF's pages (empty = all)
+overlay.checking = checking…
+overlay.pages.one = {count} page
+overlay.pages.many = {count} pages
+overlay.needs_password = needs a password
+forms.hint = Flattened fields and annotations become part of the page and can no longer be edited.
+forms.flatten_rotation = Flatten page rotation (for viewers that ignore it)
+attach.add = Add files…
+attach.clear = Clear
+attach.remove_all = Remove the attachments the files have
+attach.hint = The files are embedded in every result under their own names. Info pulls attachments out.
+attach.none = no files chosen
+attach.files.one = {count} file: {names}
+attach.files.many = {count} files: {names}
+privacy.info = Remove document info (title, author…)
+privacy.xmp = Remove XMP metadata
+privacy.fixed_id = Fixed document ID (made from the content, not the time)
+privacy.hint = Metadata only — not the text, annotation authors or hidden content.
+privacy.structure = Remove the structure tree
+privacy.structure_tip = The tags screen readers follow: the file becomes less accessible
+privacy.page_labels = Remove page labels (i, ii, 1…)
+optimize.jpeg_quality = JPEG quality
+optimize.keep_original = Keep original if not smaller
+optimize.keep_original_tip = A result that is not smaller is deleted and the original kept (Optimization alone)
+optimize.mode_tip = Smaller is lossy: JPEG keeps the colour at half the resolution (4:2:0).\nSmaller leaves the JPEG images there are as they are, quality 75 for the new ones;\nthe last choice compresses them again too, at the quality set — more loss.
+optimize.hint = Smaller is lossy: JPEG halves the colour detail. QPDF never lowers the resolution.
+optimize.object_streams = Object streams
+optimize.object_streams_tip = Generate packs small objects into compressed streams (readers since PDF 1.5).\nDisable is for very old readers.
+optimize.keep_inline = Keep inline images
+optimize.keep_inline_tip = Images written inside a page's content stay as they are
+optimize.skip_under = Skip images under
+optimize.pixels = px (Smaller)
+protect.unlock_hint = Asks for a password? Type it below.
+protect.open_password = Open password
+protect.owner_password = Owner password
+protect.repeat = Repeat
+protect.allow = Allow
+protect.print = Print
+protect.copy = Copy text
+protect.edit = Edit
+protect.annotate = Annotate
+protect.fill_forms = Fill forms
+protect.assemble = Assemble
+output.split = Split into files of
+output.split_pages = page(s), in a folder
+output.split_hint = the parts keep no bookmarks
+output.linearize = Linearize (“fast web view”)
+output.linearize_hint = a browser shows the first page before the whole file arrives
+output.file_name = File name
+output.name_ending = Name ending
+output.first_file = first file ({tag})
+output.whole_name = the whole name of the result
+output.name_ending_hint = goes in the parentheses: name (ending).pdf
+password.label = Password for encrypted inputs:
+password.tip = One password for every encrypted input and every step; never saved
+password.show = Show
+password.never_saved = never saved
+placeholder.all_pages = all pages
+placeholder.pages_keep = pages to keep
+placeholder.pages_delete = pages to delete
+placeholder.optional = optional
+placeholder.required = required
+button.choose = Choose…
+button.command = Command…
+button.command_tip = The qpdf command for cmd.exe that makes the selected file's result
+button.advanced = Advanced
+result = Result: {name}
+result.merged = Result: {name} — every file, in list order
+result.parts = Result: a folder “{name}” of parts
+result.in_folder = {result} in “{folder}”
+result.no_step = No step chosen: Repair rewrites each file, fixing what it can.
+# The file name the result line shows as an example.
+result.sample_name = name
+
+# ---- The main window ----
+already_running = QpdfDesk is already running
+tool.add_files = Add files
+tool.add_folder = Add folder
+tool.remove = Remove
+tool.clear = Clear
+tool.up_tip = Move the selected files up (Ctrl+↑)
+tool.down_tip = Move the selected files down (Ctrl+↓)
+tool.sort = Sort by name
+tool.check = Check
+tool.check_tip = qpdf --check: is each file sound? (the report lists what QPDF says)
+tool.info = Info
+tool.info_tip = What the selected file holds: pages, encryption, metadata, attachments (Enter)
+item.check.selected = Check the selected files
+item.check.every = Check every file
+item.check.report = Save the report…
+button.start = Start
+# Start, while no step is chosen.
+button.repair = Repair
+button.cancel = Cancel
+button.ok = OK
+button.close = Close
+button.copy = Copy
+button.save = Save
+button.replace = Replace
+button.delete = Delete
+menu.about = About QpdfDesk…
+list.empty_drag = Drag PDF files here
+list.empty_folder = or a whole folder — only .pdf files are taken
+# The header over the list's columns, once it has files.
+list.head_name = Name
+list.head_pages = Pages
+list.head_size = Size
+list.head_status = Status
+drop.one_pdf = Drop one PDF file here
+drop.one_folder = Drop one folder here
+drop.files_only = Drop files here, not folders
+clear.question = Clear the list?
+clear.detail = All files and their statuses leave the list. The files on disk stay as they are.
+clear.action = Clear
+output.folder_gone = {step}: the folder “{folder}” is not there — choose another
+qpdf.cannot_run = QPDF cannot be run: {why}
+qpdf.not_found = No QPDF next to QpdfDesk.exe — see READ_ME_FIRST.txt
+qpdf.too_old = QPDF {found} is too old — QpdfDesk needs {needed} or newer
+qpdf.unusable = QPDF does not work: {path}
+# In the window title, after the app's name and version.
+qpdf.title_not_found = QPDF not found
+qpdf.title_unusable = QPDF cannot be used
+report.file_name = QpdfDesk check report
+
+# ---- The status line ----
+status.looking_for_qpdf = Looking for QPDF…
+status.ready = Ready · no files yet
+status.files_on_list.one = {count} file on the list
+status.files_on_list.many = {count} files on the list
+status.adding = Adding files… (Cancel or Esc stops)
+status.cancelling_adding = Cancelling the adding…
+status.adding_cancelled = Adding cancelled
+status.add_after_batch = Files can be added when the batch has ended
+status.add_first = Add a file first
+status.select_one = Select one file
+status.select_to_check = Select the files to check, or choose Check every file
+status.nothing_checked = Nothing checked yet: choose Check › Check the selected files first
+status.report_saved = Report saved: {name}
+status.report_failed = The report could not be saved: {why}
+status.check_cancelled = Check cancelled
+status.checked = Checked
+status.cancelling = Cancelling…
+status.checking = Checking · {done} of {total} checked
+status.processing = Processing · {done} of {total} finished
+status.processing_current = Processing · {done} of {total} finished · current {percent}%
+status.batch_cancelled = Cancelled · finished files keep their results
+status.batch_complete = Batch complete
+status.command_copied = Command copied — passwords masked
+added.files.one = Added {count} file
+added.files.many = Added {count} files
+added.skipped.one = skipped {count} non-PDF
+added.skipped.many = skipped {count} non-PDF
+added.duplicates.one = {count} duplicate ignored
+added.duplicates.many = {count} duplicates ignored
+added.left_out.one = {count} left out (limit {limit})
+added.left_out.many = {count} left out (limit {limit})
+
+# ---- The status column of the list ----
+status.waiting = Waiting
+status.working = Working…
+status.working_percent = Working… {percent}%
+status.waiting_check = Waiting to check
+status.check_running = Checking…
+status.check = Check: {health}
+status.own_pages = Own pages: {pages}
+tally.count = {name} {count}
+tally.done = Done
+tally.warnings = Warnings
+tally.not_smaller = Not smaller
+tally.failed = Failed
+tally.password = Password
+tally.cancelled = Cancelled
+details.status = {name}: {status}
+details.check = {name}: Check: {health}
+details.check_trouble = {name}: Check: {health} — {line}
+details.warnings.one = {count} warning from QPDF
+details.warnings.many = {count} warnings from QPDF
+
+# ---- Info, Pages and Command windows ----
+dialog.reading = Reading the file…
+info.title = Info — {name}
+info.extract_selected = Extract selected
+info.extract_all = Extract all
+info.show_folder = Show folder
+info.attachments.one = {count} attachment
+info.attachments.many = {count} attachments
+info.cannot_read = Cannot read
+info.password_required = Password required: type it in “{field}” and open this again
+info.yes = yes
+info.no = no
+info.not_known = not known
+info.none = none
+info.file = File
+info.folder = Folder
+info.size = Size
+info.page_labels = Page labels
+info.pdf_version = PDF version
+info.encryption = Encryption
+info.open_password = {method}, open password
+info.not_allowed = {method} · not allowed: {what}
+info.linearized = Linearized
+info.form = Form
+info.bookmarks = Bookmarks
+info.select_attachments = Select the attachments to extract
+info.extracting = Extracting…
+info.saved = Saved {saved} of {asked} to “{folder}”
+info.nothing_saved = Nothing saved ({asked} failed)
+info.unmarked = not marked as from the Internet (the drive cannot)
+meta.title = Title
+meta.author = Author
+meta.subject = Subject
+meta.keywords = Keywords
+meta.creator = Creator
+meta.producer = Producer
+meta.created = Created
+meta.modified = Modified
+pages.title = Pages — {name}
+pages.help = Remove pages and change their order. OK gives the file these pages, in place of the ones chosen in the panel.
+pages.remove = Remove
+pages.reverse = Reverse
+pages.restore = Reset
+pages.count_unknown = The page count is not known
+pages.too_many = {total} pages are too many to list — type the range instead
+pages.all.one = All {count} page
+pages.all.many = All {count} pages
+pages.some = {chosen} of {total} pages: {pages}
+pages.shuffled = {chosen} of {total} pages — too shuffled to keep as a page range
+pages.one_must_stay = At least one page must stay
+pages.too_shuffled = Too shuffled to keep as a page range — fewer jumps, please
+command.title = Command — {name}
+command.merged.one = {count} file, merged
+command.merged.many = {count} files, merged
+command.note = For cmd.exe. It writes the result directly; Start writes a temporary file, checks it, then names it.
+command.refused = Start would not run it — {why}
+command.passwords = Passwords show as ********: type each one in its place.
+command.keys = <key> stands for each attachment the file has (listed when it runs).
+command.not_checked = Not checked yet: open this again in a moment for the final command.
+
+# ---- Profiles ----
+profile.label = Profile: {name}{mark}
+item.profile.save_as = Save as a new profile…
+item.profile.save_over = Save the panel to “{name}”
+item.profile.delete = Delete “{name}”…
+profile.save_as_title = Save as a new profile
+profile.save_as_prompt = Name of the new profile (steps and options; never passwords):
+profile.not_saved = Not saved: the name — {why}
+profile.replace_question = Replace the profile “{name}”?
+profile.replace_detail = Its steps and options become the panel's as it is now.
+profile.saved = Profile “{name}” saved
+profile.delete_question = Delete the profile “{name}”?
+profile.delete_detail = The panel stays as it is; only the saved profile goes.
+profile.deleted = Profile “{name}” deleted
+profile.no_folder = the app's folder is unknown
+profile.not_written = {done} for now — profiles.txt could not be written: {why}
+
+# ---- About ----
+about.title = About QpdfDesk
+about.version = Version {version} · released {date}
+about.version_unreleased = Version {version} · not released yet
+about.description = A small, safe Windows GUI for QPDF: merge, split, protect, optimize, repair and clean PDF files
+about.author = Author
+about.license = License
+about.qpdf = QPDF in use
+about.qpdf_not_found = not found
+about.qpdf_note = QPDF is a separate project by Jay Berkenbilt and contributors (Apache License 2.0). QpdfDesk only runs qpdf.exe; it neither includes nor links it.
+about.copy_tip = Copy the versions, e.g. for a bug report
+
+# ---- File dialogs ----
+filter.text = Text files
+filter.pdf = PDF files
+failure.no_free_name = Every name from “(2)” to “(9999)” is taken

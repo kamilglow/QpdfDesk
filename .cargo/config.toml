@@ -1,0 +1,6 @@
+# The C runtime linked into the EXE, so it runs on a clean Windows without
+# the Visual C++ Redistributable; build.rs keeps the Universal
+# CRT dynamic for the prebuilt FLTK. A RUSTFLAGS variable replaces this list:
+# add the flag to it as well.
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]

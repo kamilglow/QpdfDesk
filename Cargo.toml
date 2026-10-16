@@ -1,0 +1,33 @@
+[package]
+name = "qpdf-desk"
+version = "1.0.0"
+edition = "2021"
+description = "Fast, lightweight Windows GUI for QPDF: drop PDFs, tick steps, press Start. Merge, split, rotate, flatten forms and annotations, protect, optimize, repair, strip metadata — in one pass, originals never touched."
+authors = ["Kamil Głowacki"]
+license = "MIT"
+
+# The download is named after the product, not after the crate.
+[[bin]]
+name = "QpdfDesk"
+path = "src/main.rs"
+
+# Runtime dependencies. Feature "fltk-bundled" fetches a prebuilt
+# static FLTK => no CMake needed. `serde_json` reads QPDF's JSON: `Value`
+# only, no `derive` — no procedural macros at build time.
+[dependencies]
+fltk = { version = "1.5", features = ["fltk-bundled"] }
+serde_json = "1"
+
+# Build-time only: compiles the generated icon and VERSIONINFO block into the
+# EXE (see build.rs). Nothing from this crate ends up in the shipped binary.
+[build-dependencies]
+embed-resource = "3"
+
+# Release profile tuned for EXE SIZE (target: at most 1.5 MB)
+[profile.release]
+opt-level = "z"        # optimize for size
+lto = true             # link-time optimization: drops dead code
+codegen-units = 1      # better optimization at the cost of compile time
+panic = "abort"        # no stack-unwinding code
+strip = true           # remove debug symbols
+debug = false
